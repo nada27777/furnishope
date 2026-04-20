@@ -1,0 +1,515 @@
+* {
+    box-sizing: border-box; /* أهم سطر لحل مشكلة السكرول */
+}
+body { 
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f6c9c377;
+}
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    background-color: #8197a4a7;
+    border-bottom: 1px solid #ddd;
+    padding: 0 4%; /* قللت المسافة عشان اللوجو يروح للشمال أكتر */
+    line-height: 80px; 
+    position: sticky;
+    top: 1px; /* خليتها 0 عشان تلزق في الشاشة من فوق تماماً */
+    z-index: 1000; 
+    overflow: hidden;
+}
+
+.nav-container, .searchbox, .nav-icons {
+    float: left;
+}
+
+.nav-container {
+    width: 20%;
+}
+
+.logo-image {
+    height: 50px;
+    width: auto;
+    vertical-align: middle;
+}
+
+.searchbox {
+    width: 60%;
+    text-align: center;
+}
+
+/* عشان أيقونة البحث تظهر جوه أو جنب الـ input */
+.searchbox-input {
+    width: 70%;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.nav-icons {
+    width: 20%;
+    text-align: right;
+}
+
+.nav-icons a, .menu-icon {
+    display: inline-block;
+    margin-left: 20px;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+.cart-icon{
+        display: block;
+    }
+/* الـ Clearfix مهم جداً مع الـ float */
+.navbar::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.home {
+    width: 95%;
+    height: auto; /* ياخد معظم طول الشاشة */
+   margin: 40px auto;
+    background-color: #fbfbfbaa;
+    position: relative; /* ضروري عشان الأسهم تتحرك جواه */
+    display: block; /* بما إننا مش بنستخدم flex */
+    padding: 50px;
+    box-shadow: 2px 6px 15px rgb(202, 55, 141); 
+    border-radius: 15px;}
+
+.home-text {
+    width: 50%;             /* ياخد نص مساحة البوكس */
+    float: left; 
+    padding: 20px;
+}
+.home-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: #69174b;
+}
+
+.home-text p {
+    font-size: 1.1rem;
+    color: #8197a4;
+    margin-bottom: 30px;
+}
+.home-text h2 {
+    font-size: 1rem;
+    color: #69174b;
+    margin-bottom: 20px;
+}
+.buy-btn {
+    padding: 12px 30px;
+    background-color: #8197a46a;
+    color: #69174bca;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    
+    /* 2. أهم سطر للحركات */
+    display: inline-block; 
+    transition: all 0.4s ease; 
+        position: relative;
+    overflow: hidden;  
+}
+
+/* 3. حركات الـ Hover (لما الماوس ييجي عليه) */
+.buy-btn:hover {
+    background-color: #f7c5e4a7; /* اللون الوردي اللي اخترتيه */
+    
+    /* دمجنا الميلان (Skew) مع تحريك بسيط (Translate) */
+    /* استخدمنا قيم بسيطة عشان الزرار ميهربش بره الشاشة */
+    transform: skewX(-15deg) translateX(5px); 
+    
+    /* إضافة ظل خفيف وقت الوقوف عليه بيدي إحساس بالعمق */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 4. حركة بسيطة وقت الضغط (Active) */
+.buy-btn:active {
+    transform: scale(0.95) skewX(-15deg); /* الزرار يصغر سنة كأنك بتدوسي عليه فعلاً */
+}
+
+/* جزء الصورة (هيروح يمين) */
+.home-image {
+    width: 50%;             /* ياخد النص التاني من المساحة */
+    float: right;           /* يروح لجهة اليمين */
+    text-align: center;     /* يخلي الصورة في نص الـ 50% بتاعتها */
+}
+
+.home-image img {
+    max-width: 100%;        /* يضمن إن الصورة متخرجش بره الـ 50% */
+    height: 400px;          /* ثبتي الطول عشان البوكس ميتأثرش بحجم الصور المختلفة */
+    object-fit: contain;    /* يحافظ على أبعاد الصورة وميمطهاش */
+}
+/* تنسيق الأسهم */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    cursor: pointer;
+    color: #8197a4;
+    z-index: 10;
+}
+
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
+
+#slider-img {
+    transition: 0.5s ease-in-out;
+}
+/* السطر السحري (القفل) لمنع تداخل العناصر */
+.home::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.sectionOFFER{
+    width: 90%;
+    margin: 40px auto;
+    background-color: #fbfbfbaa;
+}
+
+.cardOFFER{
+    width: 30%;
+    height: 200px;
+    background-color: #8197a429;
+    float: left;
+    margin: 20px 1.6%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+.cardOFFER:hover{
+transform: translateY(-5px); 
+    box-shadow: 0 5px 15px rgba(233, 221, 221, 0.251);
+
+}
+.textOFFER{
+    width: 50%;
+    float: left;
+    padding-top: 0PX;
+}
+
+.textOFFER span{
+    
+    color: #ac3081;
+    font-size: 0.9rem;
+}
+.textOFFER h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #2c3e50;
+}
+
+.shopbtn{
+
+    padding: 5px 8px;
+    background-color: #fbecf8;
+    color: #8197a4f4;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;       /* صغرنا الخط شوية عشان ميزقش العناصر */
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 10px;        /* مسافة فوق الزرار */
+    display: inline-block;
+    
+   
+
+}
+.shopbtn:active {
+    transform: scale(0.95) skewX(-15deg); /* الزرار يصغر سنة كأنك بتدوسي عليه فعلاً */
+}
+
+.imgOFFER{
+    width: 40%;
+    float: right;
+    text-align: center;
+}
+.imgOFFER img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-top: 10px;
+}
+.sectionOFFER::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.gallery-section {
+    width: 95%;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column; /* ترتيب الصفين تحت بعض */
+    gap: 15px; /* المسافة بين الصفين */
+}
+
+/* الصف العلوي */
+.top-gallery {
+    display: flex;
+    gap: 15px;
+    height: 450px; /* ارتفاع الجزء العلوي */
+}
+
+.large-image-box {
+    flex: 2; /* تأخذ مساحة الضعف مقارنة بالصور الجانبية */
+}
+
+.side-grid {
+    flex: 1; /* تأخذ مساحة أقل */
+    display: flex;
+    flex-wrap: wrap; /* عشان الـ 4 يترصوا 2 و 2 */
+    gap: 10px;
+}
+
+.side-grid .item {
+    flex: calc(50% - 5px); /* صورتين في كل صف */
+    height: calc(50% - 5px); /* صفين فوق بعض */
+}
+
+/* الصف السفلي */
+.bottom-gallery {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    height: 220px; 
+}
+
+.bottom-gallery .item {
+    flex: 1; 
+}
+
+/* تنسيق الصور العام لضمان الشكل */
+.gallery-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* يمنع تمطط الصور ويحافظ على شكلها */
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.gallery-section img:hover {
+    transform: scale(1.05); /* تأثير بسيط عند الوقوف على الصورة */
+    opacity: 0.6;    /* تأثير شفاف خفيف عند الوقوف على الصورة */
+}
+
+/*product page*/
+
+.product-container {
+    display: flex; /* السحر هنا */
+    flex-direction: row; /* ضمن إنهم جنب بعض */
+    flex-wrap: wrap;    /* عشان لو الشاشة صغرت ينزلوا تحت بعض */
+    gap: 20px;
+    align-items: center; /* يخلي الصورة والكلام في نص بعض رأسياً */
+    justify-content: space-around; /* يوزع المساحة بينهم */
+    padding: 15px;
+    margin: 50px auto;
+    width: 90%;
+    background: #fbfbfb34;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgb(119, 19, 19);
+}
+
+.product-visual {
+    flex: 1; /* ياخد مساحة متساوية */
+    text-align: center;
+}
+
+.product-visual img {
+    max-width: 80%;
+    height: 50%;
+    transition: transform 0.3s;
+}
+
+.product-details {
+    flex: 1; /* ياخد النص التاني */
+    padding: 20px;
+}
+
+.product-details h1 {
+    font-size: 2rem;
+    color: #69174b; /* نفس درجات ألوانك في الصفحة الرئيسية */
+}
+
+
+
+/* Footer Section */
+
+
+.footer-section {
+    background-color: #fbf8fa; /* خلفية فاتحة جداً مائلة للأخضر */
+    padding: 60px 0 0 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+}
+
+.footercolumn {
+    flex: 2;
+    min-width: 220px;
+    margin-bottom: 30px;
+}
+
+.footercolumn h3 {
+    color: #491733;
+    font-size: 24px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.footercolumn p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.footercolumn ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footercolumn ul li {
+    margin-bottom: 15px;
+}
+
+.footercolumn ul li a {
+    text-decoration: none;
+    color: #2d4a43;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+/* تنسيق أيقونة Font Awesome */
+.footercolumn ul li a i {
+    color: #c4a2bb;
+    margin-right: 12px; /* المسافة بين السهم والنص */
+    font-size: 14px;
+}
+
+
+/* تنسيق الفورم */
+#newsletter input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    background: #fff;
+    margin-bottom: 10px;
+    box-sizing: border-box; /* لضمان عدم خروج الحقل عن الحدود */
+}
+
+
+#newsletter button:hover {
+    background-color: #df8dd3a0;
+    color: #989090;
+}
+
+/* الشريط السفلي الداكن */
+.footer  {
+    background-color: #8197a4e8;
+    color: rgb(126, 45, 107);
+    font-size: bold;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 15px;
+    letter-spacing: 1px;
+
+}
+.footer i {
+    color: #ffffff;
+    margin-left: 3px;
+}
+
+
+/*منيو*/
+.side-nav {
+    height: 100%;
+    width: 0; 
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 0;
+    background-color: #e9d2d2;
+    overflow-x: hidden;
+    transition: 0.5s; /* حركة ناعمة */
+    padding-top: 60px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+}
+
+.side-nav a {
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 28px;
+    color: #903f6c;
+    display: block;
+    transition: 0.3s;
+    text-align: right;
+}
+
+.side-nav a:hover {
+    color: #69174b;
+    background-color: #f6c9c333;
+}
+
+.side-nav .close-btn {
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    font-size: 36px;
+}
+
+/* Media Queries للريسبونسف */
+@media (max-width: 768px) {
+    .nav-container, .searchbox {
+        width: 30%;
+    }
+    .cart-icon{
+        display: block;
+    }
+    .searchbox-input {
+        width: 60%; /* تصغير حقل البحث للموبايل */
+        padding: 10px 10px;
+    }
+    .nav-icons {
+        width: 30%;
+        text-align: right;
+        display: block !important;
+    }
+    
+    .home-text, .home-image {
+        width: 100%; /* العناصر تحت بعض في الموبايل */
+        float: none;
+        text-align: center;
+    }
+    
+    .home-text h1 {
+        font-size: 2rem;
+    }
+
+    .cardOFFER {
+        width: 90%; /* الكروت تاخد العرض كامل */
+        margin: 10px auto;
+    }
+}

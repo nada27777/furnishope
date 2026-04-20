@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="Furni.css">
+    <title>Furni Shop</title>
+</head>
+<body>
+    <div id="side-menu" class="side-nav">
+    <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+    <a href="#">About</a>
+    <a href="#">Team</a>
+    <a href="#">Blog</a>
+    <a href="#">Contact</a>
+</div>
+    <nav class="navbar">   
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="/picturesFurniture/logo.png" alt="FurniLogo" class="logo-image">
+            </a>
+        </div>
+
+        <div class="searchbox">
+            <input type="search" placeholder="Search..." class="searchbox-input" >
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div class="nav-icons">
+          
+            <div class="menu-icon"onclick="openNav()">
+                <i class="fas fa-bars"></i>
+            </div>
+              <a  class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div> 
+    </nav>
+    <section class="home">
+    <i class="fas fa-chevron-left prev-btn" onclick="prevSlide()"></i>
+
+    <div class="home-content">
+        <div class="home-text">
+            <h1 id="main-title">Flexible Chair</h1>
+            <p id="main-desc">Tapping into a new world of furniture design.</p>
+            <h2 id="main-price">$120.00</h2>
+            <button class="buy-btn">Order Now</button>
+        </div>
+        
+        <div class="home-image">
+            <img src="/picturesFurniture/chair/1.jpg" id="slider-img" alt="Chair">
+        </div>
+    </div>
+
+    <i class="fas fa-chevron-right next-btn" onclick="nextSlide()"></i>
+</section>
+<hr>
+
+
+
+<section class="sectionOFFER">
+    <div class="cardOFFER">
+        <div class="textOFFER">
+            <span>Limited Offer</span>
+            <h3>Upto 50% Off</h3>
+            <button class="shopbtn">Shop Now</button>
+        </div>
+        <div class="imgOFFER">
+            <img src="picturesFurniture/chair/1.jpg" alt="chair">
+        </div>
+    </div>
+
+    <div class="cardOFFER">
+        <div class="textOFFER">
+            <span>Limited Offer</span>
+            <h3>Upto 50% Off</h3>
+            <button class="shopbtn">Shop Now</button>
+        </div>
+        <div class="imgOFFER">
+            <img src="picturesFurniture/chair/2.jpg" alt="chair">
+        </div>
+    </div>
+
+    <div class="cardOFFER">
+        <div class="textOFFER">
+            <span>Limited Offer</span>
+            <h3>Upto 50% Off</h3>
+            <button class="shopbtn">Shop Now</button>
+        </div>
+        <div class="imgOFFER">
+            <img src="picturesFurniture/chair/3.jpg" alt="chair">
+        </div>
+    </div>
+</section>
+
+<section class="gallery-section">
+    <div class="top-gallery">
+        <div class="large-image-box">
+            <a href="product.html?name=Modern-Sofa&price=250&img=1.jpg">           
+                <img src="picturesFurniture/sofa/1.jpg" alt="1">
+            </a>
+        </div>
+
+        <div class="side-grid">
+            <div class="item"><a href="product.html?name=Modern-Sofa&price=250&img=2.jpg">
+                <img src="picturesFurniture/sofa/2.jpg"alt="2"></a></div>
+            <div class="item"><a href="product.html?name=Modern-Sofa&price=250&img=3.jpg">
+                <img src="picturesFurniture/sofa/3.jpg" alt="3"></a></div>
+            <div class="item"><a href="product.html?name=Modern-Sofa&price=250&img=4.jpg">
+                <img src="picturesFurniture/sofa/4.jpg" alt="4"></a></div>
+            <div class="item"><a href="product.html?name=Modern-Sofa&price=250&img=5.jpg">
+                <img src="picturesFurniture/sofa/5.jpg" alt="5"></a></div>
+        </div>
+    </div>
+
+    <div class="bottom-gallery">
+        <div class="item"><a href="product.html?name=Modern-Sofa&price=250&img=6.jpg">
+            <img src="picturesFurniture/sofa/6.jpg" alt="6"></a></div>
+        <div class="item"><a href="product.html?name=Modern-Sofa&price=250&img=7.jpg">
+            <img src="picturesFurniture/sofa/7.jpg" alt="7"></a></div>
+        <div class="item"><a href="product.html?name=Modern-Sofa&price=250&img=8.jpg">
+            <img src="picturesFurniture/sofa/8.jpg" alt="8"></a></div>
+        <div class="item"><a href="product.html?name=Modern-Sofa&price=250&img=9.jpg">
+            <img src="picturesFurniture/sofa/9.jpg" alt="9"></a></div>
+    </div>
+</section>
+<footer class="footer-section">
+    <div class="container">
+        <div class="footercolumn">
+            <h3>Extra Links</h3>
+            <ul>
+                <li><a href="#"><i class="fa-solid fa-long-arrow-right"></i> My Order</a></li>
+                <li><a href="#"><i class="fa-solid fa-long-arrow-right"></i> My WishList</a></li>
+                <li><a href="#"><i class="fa-solid fa-long-arrow-right"></i> My Account</a></li>
+                <li><a href="#"><i class="fa-solid fa-long-arrow-right"></i> My Favorite</a></li>
+                <li><a href="#"><i class="fa-solid fa-long-arrow-right"></i> Terms Of Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footercolumn">
+            <h3>Contact Links</h3>
+            <ul>
+                <li><a href="#"><i class="fa-solid fa-long-arrow-right"></i> GitHub</a></li>
+                <li><a href="#"><i class="fa-solid fa-long-arrow-right"></i> Behance</a></li>
+                <li><a href="#"><i class="fa-solid fa-long-arrow-right"></i> LinkedIn</a></li>
+                <li><a href="#"><i class="fa-solid fa-long-arrow-right"></i> Mostaql</a></li>
+            </ul>
+        </div>
+
+        <div class="footercolumn">
+            <h3>Quik Links</h3>
+            <ul>
+                <li><a href="#"><i class="fa-solid fa-long-arrow-right"></i> Home</a></li>
+                <li><a href="#"><i class="fa-solid fa-long-arrow-right"></i> Shop</a></li>
+                <li><a href="#"><i class="fa-solid fa-long-arrow-right"></i> About</a></li>
+                <li><a href="#"><i class="fa-solid fa-long-arrow-right"></i> Team</a></li>
+                <li><a href="#"><i class="fa-solid fa-long-arrow-right"></i> Blog</a></li>
+                <li><a href="#"><i class="fa-solid fa-long-arrow-right"></i> Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footercolumn">
+            <h3>Newsletter</h3>
+            <p>Subscribe For Latest Updates</p>
+            <form id="newsletter">
+                <input type="email" placeholder="Enter Your Message" required>
+                <button  class="buy-btn " type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+    <p>Made with <i class="fa-solid fa-heart"></i> by Nada Ibrahim</p>
+    </div>
+</footer>
+<script src="Furni.js"></script>
+</body>
+</html>
