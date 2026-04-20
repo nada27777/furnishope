@@ -1,5 +1,5 @@
 let currentPhotoNumber = 1; // بنبدأ بصورة رقم 1
-const totalPhotos = 3; // غيري الرقم ده حسب عدد الصور اللي عندك فعلياً
+const totalPhotos = 6; // غيري الرقم ده حسب عدد الصور اللي عندك فعلياً
 
 const sliderImg = document.getElementById('slider-img');
 
@@ -14,6 +14,7 @@ function nextSlide() {
     // نغير مسار الصورة باستخدام الرقم الجديد
     // تأكدي إن الامتداد (png) صح ومطابق للي عندك
     sliderImg.src = `picturesFurniture/chair/${currentPhotoNumber}.jpg`;
+
 }
 
 function prevSlide() {
@@ -37,7 +38,7 @@ const img = params.get('img');
 if(name) {
     document.getElementById('product-title').innerText = name;
     document.getElementById('product-price').innerText = "$" + price;
-    // افترضي إن الصور في فولدر chair زي الكود القديم بتاعك
+
 document.getElementById('main-product-img').src = "picturesFurniture/sofa/" + img;}
 
 function openNav() {

@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box; /* أهم سطر لحل مشكلة السكرول */
+    box-sizing: border-box; 
 }
 body { 
     margin: 0;
@@ -13,10 +13,10 @@ body {
     height: 80px;
     background-color: #8197a4a7;
     border-bottom: 1px solid #ddd;
-    padding: 0 4%; /* قللت المسافة عشان اللوجو يروح للشمال أكتر */
+    padding: 0 4%; 
     line-height: 80px; 
     position: sticky;
-    top: 1px; /* خليتها 0 عشان تلزق في الشاشة من فوق تماماً */
+    top: 1px; 
     z-index: 1000; 
     overflow: hidden;
 }
@@ -40,7 +40,7 @@ body {
     text-align: center;
 }
 
-/* عشان أيقونة البحث تظهر جوه أو جنب الـ input */
+/*ايقونه البحث جمب*/
 .searchbox-input {
     width: 70%;
     padding: 10px 15px;
@@ -64,7 +64,7 @@ body {
 .cart-icon{
         display: block;
     }
-/* الـ Clearfix مهم جداً مع الـ float */
+
 .navbar::after {
     content: "";
     display: table;
@@ -73,7 +73,7 @@ body {
 
 .home {
     width: 95%;
-    height: auto; /* ياخد معظم طول الشاشة */
+    height: auto; 
    margin: 40px auto;
     background-color: #fbfbfbaa;
     position: relative; /* ضروري عشان الأسهم تتحرك جواه */
@@ -111,7 +111,7 @@ body {
     border-radius: 5px;
     font-size: 1.2rem;
     font-weight: bold;
-    
+    border: #69174b solid 1px;
     /* 2. أهم سطر للحركات */
     display: inline-block; 
     transition: all 0.4s ease; 
@@ -121,13 +121,9 @@ body {
 
 /* 3. حركات الـ Hover (لما الماوس ييجي عليه) */
 .buy-btn:hover {
-    background-color: #f7c5e4a7; /* اللون الوردي اللي اخترتيه */
-    
-    /* دمجنا الميلان (Skew) مع تحريك بسيط (Translate) */
-    /* استخدمنا قيم بسيطة عشان الزرار ميهربش بره الشاشة */
+    background-color: #f7c5e4a7; 
     transform: skewX(-15deg) translateX(5px); 
     
-    /* إضافة ظل خفيف وقت الوقوف عليه بيدي إحساس بالعمق */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -145,7 +141,7 @@ body {
 
 .home-image img {
     max-width: 100%;        /* يضمن إن الصورة متخرجش بره الـ 50% */
-    height: 400px;          /* ثبتي الطول عشان البوكس ميتأثرش بحجم الصور المختلفة */
+    height: 300px;          /* ثبتي الطول عشان البوكس ميتأثرش بحجم الصور المختلفة */
     object-fit: contain;    /* يحافظ على أبعاد الصورة وميمطهاش */
 }
 /* تنسيق الأسهم */
@@ -200,6 +196,7 @@ transform: translateY(-5px);
     width: 50%;
     float: left;
     padding-top: 0PX;
+    margin-top: 20px;
 }
 
 .textOFFER span{
@@ -213,24 +210,8 @@ transform: translateY(-5px);
     color: #2c3e50;
 }
 
-.shopbtn{
-
-    padding: 5px 8px;
-    background-color: #fbecf8;
-    color: #8197a4f4;
-    border: none;
-    border-radius: 8px;
-    font-size: 0.9rem;       /* صغرنا الخط شوية عشان ميزقش العناصر */
-    font-weight: bold;
-    transition: 0.3s;
-    margin-top: 10px;        /* مسافة فوق الزرار */
-    display: inline-block;
-    
-   
-
-}
-.shopbtn:active {
-    transform: scale(0.95) skewX(-15deg); /* الزرار يصغر سنة كأنك بتدوسي عليه فعلاً */
+.textOFFER button{
+    margin-top: 20px;
 }
 
 .imgOFFER{
@@ -297,7 +278,7 @@ transform: translateY(-5px);
 .gallery-section img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* يمنع تمطط الصور ويحافظ على شكلها */
+    object-fit: cover; 
     border-radius: 12px;
     transition: transform 0.3s ease;
     display: block;
@@ -313,7 +294,7 @@ transform: translateY(-5px);
 .product-container {
     display: flex; /* السحر هنا */
     flex-direction: row; /* ضمن إنهم جنب بعض */
-    flex-wrap: wrap;    /* عشان لو الشاشة صغرت ينزلوا تحت بعض */
+   /* flex-wrap: wrap;    /* يترصوا 2 و 2 */
     gap: 20px;
     align-items: center; /* يخلي الصورة والكلام في نص بعض رأسياً */
     justify-content: space-around; /* يوزع المساحة بينهم */
@@ -337,13 +318,13 @@ transform: translateY(-5px);
 }
 
 .product-details {
-    flex: 1; /* ياخد النص التاني */
+    flex: 1;
     padding: 20px;
 }
 
 .product-details h1 {
     font-size: 2rem;
-    color: #69174b; /* نفس درجات ألوانك في الصفحة الرئيسية */
+    color: #69174b; 
 }
 
 
@@ -352,7 +333,7 @@ transform: translateY(-5px);
 
 
 .footer-section {
-    background-color: #fbf8fa; /* خلفية فاتحة جداً مائلة للأخضر */
+    background-color: #fbf8fa;
     padding: 60px 0 0 0;
 }
 
